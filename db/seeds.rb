@@ -9,4 +9,6 @@ def create_users
   puts "Created #{User.all.count} users!"
 end
 
+def create_products; end
+
 create_users
