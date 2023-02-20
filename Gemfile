@@ -76,3 +76,5 @@ gem 'tailwindcss-rails', '~> 2.0'
 gem 'pexels', '~> 0.5.0'
 
 gem "faker", "~> 3.1"
+
+gem "factory_bot", "~> 6.2"
