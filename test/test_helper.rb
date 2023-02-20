@@ -13,5 +13,12 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    include Warden::Test::Helpers
+    Warden.test_mode!
+
+    include FactoryBot::Syntax::Methods
   end
 end
+
+# Load factories in test/factories
+FactoryBot.find_definitions
