@@ -1,3 +1,9 @@
 #!/bin/bash
 
-echo 'hello from push'
+rubocop .
+
+# If Rubocop exited with an error, prevent the push
+if [ $? -ne 0 ]; then
+  echo "Rubocop found style violations. Fix them and try again."
+  exit 1
+fi
