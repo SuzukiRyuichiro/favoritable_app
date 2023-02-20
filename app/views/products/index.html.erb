@@ -1,0 +1,6 @@
+<% @products.each do |product| %>
+  <div class="flex">
+    <img src="<%= product.image_url %>" alt="<%= product.name  %>" srcset="">
+    <p class="text-md"><%= product.name %></p>
+  </div>
+<% end %>
