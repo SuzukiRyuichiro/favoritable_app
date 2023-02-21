@@ -21,4 +21,4 @@ def create_product
 end
 
 create_users
-10.times { create_product }
+100.times { create_product }
