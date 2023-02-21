@@ -12,9 +12,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_220_192_911) do
+ActiveRecord::Schema[7.0].define(version: 20_230_221_222_346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'favorites', force: :cascade do |t|
+    t.string 'favoritable_type', null: false
+    t.bigint 'favoritable_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index %w[favoritable_type favoritable_id], name: 'index_favorites_on_favoritable'
+  end
 
   create_table 'products', force: :cascade do |t|
     t.string 'name'
