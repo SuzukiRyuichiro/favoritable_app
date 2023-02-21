@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 User.destroy_all
-Product.destroy_all
+Product.destroy_all unless ENV['SKIP_PRODUCT']
+Favorite.destroy_all
 
 def create_users
   User.create(email: 'mail@mail.com', password: '123123')
@@ -20,5 +21,18 @@ def create_product
   end
 end
 
+def create_favorite(user, favoritable)
+  fav = Favorite.new(user:, favoritable:)
+  puts "#{fav.user.email} favorited #{fav.favoritable.name}" if fav.save
+end
+
+# actual seeding
+
 create_users
-100.times { create_product }
+100.times { create_product } unless ENV['SKIP_PRODUCT']
+
+40.times do
+  user = User.all.sample
+  product = Product.all.sample
+  create_favorite(user, product)
+end

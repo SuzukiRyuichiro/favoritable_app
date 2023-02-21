@@ -1,15 +1,17 @@
 AllCops:
-  NewCops: enable
+    NewCops: enable
 
 Style/Documentation:
-  Enabled: false
+    Enabled: false
 
 Metrics/CyclomaticComplexity:
-  Enabled: false
+    Enabled: false
 
 Metrics/MethodLength:
-  Enabled: false
-
+    Enabled: false
 
 Metrics/PerceivedComplexity:
-  Enabled: false
+    Enabled: false
+
+Metrics/BlockLength:
+    Enabled: false
