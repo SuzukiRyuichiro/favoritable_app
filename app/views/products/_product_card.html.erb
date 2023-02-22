@@ -1,7 +1,7 @@
-<div class="max-w-sm bg-white border border-gray-200 flex rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  <div class="rounded-t-lg bg-cover h-48 w-32" style="background-image: url(<%= product.image_url %>);">
+<div class="max-w-sm bg-white border border-gray-200 w-full xs:flex inline-block md:flex-col rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="rounded-t-lg bg-cover h-48 flex-grow md:w-auto" style="background-image: url(<%= product.image_url %>);">
   </div>
-  <div class="p-5">
+  <div class="p-5 flex-grow">
     <a href="#">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= product.name %></h5>
     </a>
