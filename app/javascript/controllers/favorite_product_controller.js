@@ -1,7 +1,6 @@
 import { Controller } from '@hotwired/stimulus'
 
+// Connects to data-controller="favorite-product"
 export default class extends Controller {
-    connect() {
-        this.element.textContent = 'Hello World!'
-    }
+    static values = { productId: Number }
 }
