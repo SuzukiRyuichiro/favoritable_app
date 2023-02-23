@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   def favorite(favoritable)
     favorite = Favorite.new(user: self, favoritable:)
-    favorite.save
+    favorite.save ? favorite : nil
   end
 
   def unfavorite(favoritable)

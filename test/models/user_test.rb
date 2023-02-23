@@ -17,10 +17,13 @@ class UserTest < ActiveSupport::TestCase
     count_before = Favorite.all.count
     user = create(:user)
     product = create(:product)
-    new_favorite = user.favorite(product)
+    favorite = user.favorite(product)
 
     assert count_before < Favorite.all.count
-    assert new_favorite.user == user && new_favorite.favoritable == product
+    assert favorite.user == user && favorite.favoritable == product
+
+    another_favorite = user.favorite(product)
+    assert_equal another_favorite, nil
   end
 
   test '#unfavorite to delete a favorite' do
