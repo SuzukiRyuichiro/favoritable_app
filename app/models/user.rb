@@ -13,11 +13,4 @@ class User < ApplicationRecord
     favorite = Favorite.new(user: self, favoritable:)
     favorite.save ? favorite : nil
   end
-
-  def unfavorite(favoritable)
-    favorite = Favorite.find_by(user: self, favoritable:)
-    return unless favorite
-
-    favorite.destroy
-  end
 end
