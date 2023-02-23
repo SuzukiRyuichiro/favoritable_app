@@ -2,6 +2,6 @@
 
 class FavoriteProductsController < ApplicationController
   def index
-    @products = policy_scope(Favorite.includes(:favoritable)).where(favoritable_type: 'Product').map(&:favoritable)
+    @products = policy_scope(current_user.favorite_products)
   end
 end
