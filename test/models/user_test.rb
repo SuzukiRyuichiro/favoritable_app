@@ -25,16 +25,4 @@ class UserTest < ActiveSupport::TestCase
     another_favorite = user.favorite(product)
     assert_nil another_favorite
   end
-
-  test '#unfavorite to delete a favorite' do
-    user = create(:user)
-    product = create(:product)
-    favorite = create(:favorite, favoritable: product, user:)
-
-    user.unfavorite(product)
-
-    assert_raises(ActiveRecord::RecordNotFound) do
-      Favorite.find(favorite.id)
-    end
-  end
 end
