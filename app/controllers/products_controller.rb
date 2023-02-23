@@ -2,6 +2,6 @@
 
 class ProductsController < ApplicationController
   def index
-    @products = policy_scope(Product)
+    @products = policy_scope(Product.eager_load(favorites: :user))
   end
 end

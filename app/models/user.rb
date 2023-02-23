@@ -8,4 +8,15 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :favorite_products, through: :favorites, source: :favoritable, source_type: 'Product'
+
+  def favorite(favoritable)
+    Favorite.create(user: self, favoritable:)
+  end
+
+  def unfavorite(favoritable)
+    favorite = Favorite.find_by(user: self, favoritable:)
+    return unless favorite
+
+    favorite.destroy
+  end
 end
