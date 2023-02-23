@@ -23,7 +23,7 @@ class UserTest < ActiveSupport::TestCase
     assert favorite.user == user && favorite.favoritable == product
 
     another_favorite = user.favorite(product)
-    assert_equal another_favorite, nil
+    assert_nil another_favorite
   end
 
   test '#unfavorite to delete a favorite' do
