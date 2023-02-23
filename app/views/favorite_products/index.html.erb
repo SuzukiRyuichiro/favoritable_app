@@ -2,4 +2,10 @@
   <span class="text-lg dark:text-white text-gray-900">My Favorite Products</span>
 </div>
 
-<%= render 'products/product_cards_grid', products: @products, current_user: @current_user %>
+<%= render 'products/product_cards_grid', products: @products, user: @current_user %>
+
+<% if @products.empty? %>
+  <div class="flex flex-col items-center justify-center h-3/4">
+    <p class="text-lg dark:text-white text-gray-900">You have no favorite product</p>
+  </div>
+<% end %>
