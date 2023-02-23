@@ -1,5 +1,1 @@
-<div class="grid md:grid-cols-3 lg:grid-cols-6 grid-cols-none sm:grid-cols-2 gap-4 p-8">
-  <% @products.each do |product| %>
-    <%= render partial: 'product_card', locals: { product: product } %>
-  <% end %>
-</div>
+<%= render 'products/product_cards_grid', products: @products, current_user: @current_user %>

@@ -13,7 +13,7 @@ end
 
 def create_product
   client = Pexels::Client.new(Rails.application.credentials.pexels.api_key)
-  name = Faker::Commerce.product_name
+  name = Faker::Commerce.unique.product_name
 
   client.photos.search(name, per_page: 1).each do |photo|
     product = Product.create(name:, image_url: photo.src['medium'])

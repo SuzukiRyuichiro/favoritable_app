@@ -73,6 +73,9 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.7)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.38.0)
       addressable
       matrix
@@ -149,6 +152,8 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
+    pundit (2.3.0)
+      activesupport (>= 3.0.0)
     racc (1.6.2)
     rack (2.2.6.2)
     rack-test (2.0.2)
@@ -215,6 +220,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -240,6 +246,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bullet (~> 7.0)
   capybara
   debug
   devise
@@ -250,6 +257,7 @@ DEPENDENCIES
   pexels (~> 0.5.0)
   pg (~> 1.1)
   puma (~> 5.0)
+  pundit (~> 2.3)
   rails (~> 7.0.4)
   redis (~> 4.0)
   selenium-webdriver
