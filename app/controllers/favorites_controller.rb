@@ -15,4 +15,18 @@ class FavoritesController < ApplicationController
       end
     end
   end
+
+  def destroy
+    favorite = Favorite.find(params[:id])
+    authorize favorite
+
+    return unless favorite.destroy
+
+    product = Product.find(params[:product_id])
+    respond_to do |format|
+      format.text do
+        render partial: 'products/product_card', locals: { user: current_user, product: }, formats: [:html]
+      end
+    end
+  end
 end
