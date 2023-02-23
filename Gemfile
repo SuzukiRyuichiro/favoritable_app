@@ -83,3 +83,5 @@ gem 'pundit', '~> 2.3'
 gem 'bullet', '~> 7.0', group: :development
 
 gem 'simple_form', '~> 5.2'
+
+gem 'dockerfile-rails', '>= 1.2', group: :development
