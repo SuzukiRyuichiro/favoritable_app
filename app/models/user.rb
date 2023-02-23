@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_many :favorite_products, through: :favorites, source: :favoritable, source_type: 'Product'
 
   def favorite(favoritable)
-    Favorite.create(user: self, favoritable:)
+    favorite = Favorite.new(user: self, favoritable:)
+    favorite.save ? favorite : nil
   end
 
   def unfavorite(favoritable)

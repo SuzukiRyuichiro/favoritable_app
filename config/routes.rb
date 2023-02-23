@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  resources :products, only: %i[index]
-  resources :favorites, only: %i[create]
+  resources :products, only: %i[index] do
+    resources :favorites, only: %i[create destroy]
+  end
   resources :favorite_products, only: %i[index]
 end

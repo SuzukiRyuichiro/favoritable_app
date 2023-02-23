@@ -2,6 +2,3 @@
 import '@hotwired/turbo-rails'
 import 'controllers'
 import 'flowbite'
-import feather from 'feather-icons'
-
-feather.replace()
