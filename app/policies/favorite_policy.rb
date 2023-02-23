@@ -7,4 +7,8 @@ class FavoritePolicy < ApplicationPolicy
       scope.where(user:)
     end
   end
+
+  def create?
+    true
+  end
 end

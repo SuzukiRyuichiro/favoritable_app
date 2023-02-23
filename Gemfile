@@ -81,3 +81,5 @@ gem 'faker', '~> 3.1'
 gem 'pundit', '~> 2.3'
 
 gem 'bullet', '~> 7.0', group: :development
+
+gem 'simple_form', '~> 5.2'

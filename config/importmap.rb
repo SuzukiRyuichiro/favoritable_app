@@ -31,4 +31,3 @@ pin 'process', to: 'https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/pro
 pin 'tty', to: 'https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/tty.js'
 pin 'url', to: 'https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/url.js'
 pin 'util', to: 'https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/util.js'
-pin 'feather-icons', to: 'https://ga.jspm.io/npm:feather-icons@4.29.0/dist/feather.js'
