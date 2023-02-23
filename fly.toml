@@ -39,3 +39,7 @@ processes = []
 [[statics]]
   guest_path = "/rails/public"
   url_prefix = "/"
+
+[deploy]
+  release_command = "bundle exec rails db:migrate"
+
