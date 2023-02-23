@@ -1,4 +1,4 @@
-<div class="bg-white border flex md:block border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" data-controller="favorite-product" data-favorite-product-product-id-value="<%= product.id %>" data-favorite-product-delete-path-value="<%= product_favorite_path(product, Favorite.find_by(favoritable_id: product.id, favoritable_type: 'Product', user: current_user)) if product.favorited_by?(current_user) %>" data-favorite-product-target="card">
+<div class="bg-white border flex md:block border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" data-controller="favorite-product" data-favorite-product-product-id-value="<%= product.id %>" data-favorite-product-delete-path-value="<%= product_favorite_path(product, product.favorites.find_by(user: current_user)) if product.favorited_by?(current_user) %>" data-favorite-product-target="card">
   <div class="md:rounded-t-lg rounded-l-lg flex-shrink-0 md:rounded-bl-none bg-cover h-48 w-48  md:w-auto relative" style="background-image: url(<%= product.image_url %>);">
 
     <% unless product.favorited_by?(current_user) %>
